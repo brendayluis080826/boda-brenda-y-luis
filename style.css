@@ -1,0 +1,883 @@
+/* =========================================
+   BRENDA & LUIS
+   Diseño elegante de boda
+========================================= */
+
+
+/* Google Fonts:
+Cormorant Garamond
+Montserrat
+*/
+
+
+:root{
+
+    --marfil:#FAF7F2;
+
+    --dorado:#C7A86D;
+
+    --verde:#A9B8A5;
+
+    --gris:#444444;
+
+    --blanco:#FFFFFF;
+
+    --sombra:
+    0 25px 60px rgba(0,0,0,.12);
+
+}
+
+
+
+/* =========================================
+   RESET
+========================================= */
+
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #fffdfb,
+
+        #f8f2e9
+
+    );
+
+    font-family:
+
+    'Montserrat',
+
+    sans-serif;
+
+    color:var(--gris);
+
+    
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    
+
+    padding:25px;
+
+}
+
+
+
+/* =========================================
+   SPLASH SCREEN
+========================================= */
+
+
+.splash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--marfil);
+
+    z-index:100;
+
+    
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    
+
+    animation:
+
+    desaparecer 2.8s forwards;
+
+}
+
+
+
+.splash img{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.15);
+
+    
+
+    animation:
+
+    respirar 2s infinite;
+
+}
+
+
+
+.splash h2{
+
+    margin-top:25px;
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    
+
+    font-size:45px;
+
+    
+
+    color:var(--dorado);
+
+}
+
+
+
+.splash p{
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+}
+
+
+
+@keyframes respirar{
+
+
+0%{
+
+transform:scale(.95);
+
+}
+
+
+50%{
+
+transform:scale(1);
+
+}
+
+
+100%{
+
+transform:scale(.95);
+
+}
+
+
+}
+
+
+
+@keyframes desaparecer{
+
+
+0%{
+
+opacity:1;
+
+}
+
+
+75%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+
+}
+
+
+
+/* =========================================
+   TARJETA PRINCIPAL
+========================================= */
+
+
+.card{
+
+
+background:
+
+rgba(255,255,255,.85);
+
+
+backdrop-filter:
+
+blur(10px);
+
+
+
+max-width:460px;
+
+
+width:100%;
+
+
+
+padding:
+
+35px;
+
+
+
+border-radius:
+
+30px;
+
+
+
+text-align:center;
+
+
+
+box-shadow:
+
+var(--sombra);
+
+
+
+animation:
+
+entrada 1s ease;
+
+
+
+}
+
+
+
+@keyframes entrada{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+/* =========================================
+   FOTOGRAFÍA PRINCIPAL
+========================================= */
+
+
+.main-photo{
+
+
+width:100%;
+
+
+height:320px;
+
+
+
+object-fit:cover;
+
+
+
+border-radius:
+
+25px;
+
+
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.15);
+
+
+
+transition:.5s;
+
+
+
+}
+
+
+
+.main-photo:hover{
+
+
+transform:
+
+scale(1.03);
+
+
+}
+
+
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+
+.logo{
+
+
+width:120px;
+
+
+height:120px;
+
+
+
+object-fit:cover;
+
+
+
+border-radius:50%;
+
+
+
+margin-top:-60px;
+
+
+
+border:
+
+8px solid white;
+
+
+
+background:white;
+
+
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.15);
+
+
+
+}
+
+
+
+
+/* =========================================
+   TITULOS
+========================================= */
+
+
+h1{
+
+
+font-family:
+
+'Cormorant Garamond',
+
+serif;
+
+
+
+font-size:
+
+55px;
+
+
+
+font-weight:
+
+700;
+
+
+
+color:
+
+var(--dorado);
+
+
+
+margin:
+
+20px 0 5px;
+
+
+
+line-height:
+
+1;
+
+
+
+}
+
+
+
+.date{
+
+
+font-size:14px;
+
+
+letter-spacing:3px;
+
+
+text-transform:uppercase;
+
+
+color:#888;
+
+
+}
+
+
+
+/* =========================================
+   SEPARADOR
+========================================= */
+
+
+.divider{
+
+
+height:2px;
+
+
+width:80px;
+
+
+
+background:
+
+var(--dorado);
+
+
+
+border:0;
+
+
+
+margin:
+
+30px auto;
+
+
+
+}
+
+
+
+
+p{
+
+
+line-height:1.8;
+
+
+font-size:15px;
+
+
+}
+
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+
+.btn{
+
+
+display:block;
+
+
+
+margin:
+
+30px auto;
+
+
+
+padding:
+
+18px;
+
+
+
+background:
+
+var(--dorado);
+
+
+
+color:white;
+
+
+
+text-decoration:none;
+
+
+
+border-radius:
+
+18px;
+
+
+
+font-weight:
+
+600;
+
+
+
+font-size:
+
+16px;
+
+
+
+transition:
+
+.3s;
+
+
+
+box-shadow:
+
+0 10px 25px rgba(199,168,109,.35);
+
+
+
+}
+
+
+
+.btn:hover{
+
+
+transform:
+
+translateY(-4px);
+
+
+
+background:
+
+#b28c50;
+
+
+}
+
+
+
+
+/* =========================================
+   INSTRUCCIONES
+========================================= */
+
+
+.instructions{
+
+
+margin-top:35px;
+
+
+
+padding:
+
+25px;
+
+
+
+background:
+
+#faf7f2;
+
+
+
+border-radius:
+
+20px;
+
+
+
+text-align:left;
+
+
+
+}
+
+
+
+.instructions h3{
+
+
+text-align:center;
+
+
+
+font-family:
+
+'Cormorant Garamond',
+
+serif;
+
+
+
+font-size:30px;
+
+
+
+color:
+
+var(--dorado);
+
+
+
+}
+
+
+
+.instructions p{
+
+
+margin:
+
+8px 0;
+
+
+font-size:
+
+14px;
+
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+
+.footer{
+
+
+margin-top:35px;
+
+
+
+font-family:
+
+'Cormorant Garamond',
+
+serif;
+
+
+
+font-size:
+
+24px;
+
+
+
+color:
+
+var(--dorado);
+
+
+
+}
+
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+
+@media(max-width:500px){
+
+
+
+body{
+
+padding:15px;
+
+}
+
+
+
+.card{
+
+padding:25px;
+
+}
+
+
+
+h1{
+
+font-size:45px;
+
+}
+
+
+
+.main-photo{
+
+height:260px;
+
+}
+
+
+
+.logo{
+
+width:100px;
+
+height:100px;
+
+margin-top:-50px;
+
+}
+
+
+
+}
+
+/* =========================================
+   GALERIA NOVIOS
+========================================= */
+
+
+.gallery{
+
+    margin-top:40px;
+
+}
+
+
+.gallery h2{
+
+    font-family:
+    'Cormorant Garamond',
+    serif;
+
+    font-size:35px;
+
+    color:var(--dorado);
+
+    text-align:center;
+
+}
+
+
+
+.photos{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+
+
+.photos img{
+
+    width:100%;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+}
+
+
+
+.photos img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+@media(max-width:500px){
+
+.photos{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+}
