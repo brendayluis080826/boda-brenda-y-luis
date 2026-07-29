@@ -8,45 +8,84 @@
 
 <title>Recuerdos | Brenda & Luis</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="gallery.css">
 
 </head>
 
 <body>
 
-<div class="gallery-header">
+<header class="galleryHero">
 
-    <h1>Recuerdos de nuestra boda</h1>
+    <div class="overlay"></div>
 
-    <p>
-        Gracias por compartir este día con nosotros.
-    </p>
+    <div class="heroContent">
 
-    <a href="index.html" class="button">
-        ← Volver
-    </a>
+        <h1>Brenda <span>&</span> Luis</h1>
 
-</div>
+        <h2>Recuerdos de nuestra boda</h2>
 
+        <p>
 
-<div id="gallery" class="photo-grid">
+            Gracias por acompañarnos en uno de los días más importantes de nuestra vida.
+            Cada fotografía compartida forma parte de nuestra historia.
 
-    <div class="loading">
+        </p>
 
-        Cargando fotografías...
+        <div class="stats">
+
+            <div>
+
+                <span id="photoCount">0</span>
+
+                <small>Fotografías</small>
+
+            </div>
+
+        </div>
+
+        <a href="index.html" class="button">
+
+            ← Volver
+
+        </a>
 
     </div>
 
+</header>
+
+<main>
+
+<section class="gallerySection">
+
+<div id="gallery" class="galleryGrid">
+
+<div class="loading">
+
+Cargando recuerdos...
+
 </div>
 
+</div>
+
+</section>
+
+</main>
 
 <div id="lightbox" class="lightbox">
 
-    <span id="close">&times;</span>
+<button id="prevPhoto">&#10094;</button>
 
-    <img id="lightboxImage">
+<img id="lightboxImage">
+
+<button id="nextPhoto">&#10095;</button>
+
+<button id="closeLightbox">&times;</button>
 
 </div>
 
