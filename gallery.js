@@ -61,6 +61,9 @@ async function loadGallery(){
 
             img.className="gallery-photo";
 
+            img.style.animationDelay =
+(index * 0.05) + "s";
+
             img.onclick=function(){
 
                 openPhoto(index);
