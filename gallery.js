@@ -49,6 +49,8 @@ async function loadGallery(){
 
         photos.forEach((photo,index)=>{
 
+            console.log(photo);
+
             const img=document.createElement("img");
 
             img.src=photo.thumbnail;
@@ -92,11 +94,11 @@ async function loadGallery(){
 
 function openPhoto(index){
 
-    current=index;
+    current = index;
 
-    lightbox.style.display="flex";
+    lightbox.style.display = "flex";
 
-    lightboxImage.src=photos[current].full;
+    lightboxImage.src = photos[current].full;
 
 }
 
