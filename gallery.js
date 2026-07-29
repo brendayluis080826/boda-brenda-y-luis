@@ -186,6 +186,52 @@ document.addEventListener("keydown",function(e){
 
 });
 
+// =========================
+// DESLIZAMIENTO EN CELULAR
+// =========================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+lightbox.addEventListener("touchstart", function(e){
+
+    touchStartX = e.changedTouches[0].screenX;
+
+});
+
+
+lightbox.addEventListener("touchend", function(e){
+
+    touchEndX = e.changedTouches[0].screenX;
+
+    handleSwipe();
+
+});
+
+
+function handleSwipe(){
+
+    let diferencia = touchEndX - touchStartX;
+
+
+    // deslizar hacia la izquierda
+    if(diferencia < -50){
+
+        nextPhoto();
+
+    }
+
+
+    // deslizar hacia la derecha
+    if(diferencia > 50){
+
+        prevPhoto();
+
+    }
+
+}
+
 
 // =========================
 
