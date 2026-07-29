@@ -1,14 +1,23 @@
+// ========= CONFIGURACIÓN =========
+
 const API =
 "https://script.google.com/macros/s/AKfycbw7CXpUeWtrjdlrQmTPVo9ix_f7HVKVyJHYjOIptO-qsoRF7D8lDeXeBoCNflhXRG9dkQ/exec?action=photos";
 
 const gallery = document.getElementById("gallery");
+const counter = document.getElementById("photoCount");
 
 const lightbox = document.getElementById("lightbox");
-
 const lightboxImage = document.getElementById("lightboxImage");
 
-const close = document.getElementById("close");
+const closeBtn = document.getElementById("closeLightbox");
+const prevBtn = document.getElementById("prevPhoto");
+const nextBtn = document.getElementById("nextPhoto");
 
+let photos = [];
+let current = 0;
+
+
+// =========================
 
 async function loadGallery(){
 
@@ -16,36 +25,43 @@ async function loadGallery(){
 
         const response = await fetch(API);
 
-        const photos = await response.json();
+        const data = await response.json();
+
+        photos = data;
+
+        counter.textContent = photos.length;
 
         gallery.innerHTML = "";
 
-        if(photos.length === 0){
+        if(photos.length===0){
 
-            gallery.innerHTML =
-            "<p>No hay fotografías todavía.</p>";
+            gallery.innerHTML=`
+                <div class="loading">
+
+                    Aún no hay fotografías.
+
+                </div>
+            `;
 
             return;
 
         }
 
-        photos.forEach(photo=>{
+        photos.forEach((photo,index)=>{
 
-            const img = document.createElement("img");
+            const img=document.createElement("img");
 
-            img.src = photo.thumbnail;
+            img.src=photo.thumbnail;
 
-            img.alt = photo.name;
+            img.alt=photo.name;
 
-            img.loading = "lazy";
+            img.loading="lazy";
 
-            img.className = "gallery-photo";
+            img.className="gallery-photo";
 
-            img.onclick = function(){
+            img.onclick=function(){
 
-                lightbox.style.display = "flex";
-
-                lightboxImage.src = photo.thumbnail.replace("w800","w2000");
+                openPhoto(index);
 
             };
 
@@ -57,22 +73,76 @@ async function loadGallery(){
 
     catch(error){
 
-        gallery.innerHTML =
-        "<p>Error al cargar las fotografías.</p>";
-
         console.error(error);
+
+        gallery.innerHTML=`
+            <div class="loading">
+
+                Error al cargar la galería.
+
+            </div>
+        `;
 
     }
 
 }
 
 
-close.onclick=function(){
+// =========================
+
+function openPhoto(index){
+
+    current=index;
+
+    lightbox.style.display="flex";
+
+    lightboxImage.src=photos[current].full;
+
+}
+
+
+// =========================
+
+function nextPhoto(){
+
+    current++;
+
+    if(current>=photos.length){
+
+        current=0;
+
+    }
+
+    lightboxImage.src=photos[current].full;
+
+}
+
+function prevPhoto(){
+
+    current--;
+
+    if(current<0){
+
+        current=photos.length-1;
+
+    }
+
+    lightboxImage.src=photos[current].full;
+
+}
+
+
+// =========================
+
+nextBtn.onclick=nextPhoto;
+
+prevBtn.onclick=prevPhoto;
+
+closeBtn.onclick=function(){
 
     lightbox.style.display="none";
 
 };
-
 
 lightbox.onclick=function(e){
 
@@ -84,6 +154,35 @@ lightbox.onclick=function(e){
 
 };
 
+
+// =========================
+
+document.addEventListener("keydown",function(e){
+
+    if(lightbox.style.display!=="flex") return;
+
+    if(e.key==="Escape"){
+
+        lightbox.style.display="none";
+
+    }
+
+    if(e.key==="ArrowRight"){
+
+        nextPhoto();
+
+    }
+
+    if(e.key==="ArrowLeft"){
+
+        prevPhoto();
+
+    }
+
+});
+
+
+// =========================
 
 loadGallery();
 
