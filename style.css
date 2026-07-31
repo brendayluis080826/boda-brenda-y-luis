@@ -8,7 +8,612 @@
 Cormorant Garamond
 Montserrat
 */
+/* =========================================
+   🍂 BRENDA & LUIS - OTOÑO 2026
+   Diseño elegante y cálido
+========================================= */
 
+/* Google Fonts:
+Cormorant Garamond
+Montserrat
+*/
+
+:root {
+    /* 🍁 PALETA OTOÑAL PRINCIPAL */
+    --crema-calido: #F5EDE3;
+    --blanco-roto: #FDFBF7;
+    --cafe-tostado: #8B5A2B;
+    --cafe-oscuro: #5C3D2E;
+    --dorado-otonhal: #C49A2A;
+    --naranja-quemado: #CC6B2C;
+    --calabaza: #D4783C;
+    --canela: #A67B5B;
+    --oxido: #B86B3A;
+    --miel: #E8A84C;
+    
+    /* VARIABLES PARA USAR */
+    --marfil: var(--crema-calido);
+    --dorado: var(--dorado-otonhal);
+    --verde: #A9B8A5;
+    --gris: var(--cafe-oscuro);
+    --blanco: var(--blanco-roto);
+    --sombra: 0 25px 60px rgba(92, 61, 46, 0.12);
+    --sombra-dorada: 0 10px 30px rgba(196, 154, 42, 0.25);
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: 
+        radial-gradient(ellipse at 30% 20%, rgba(196, 154, 42, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(204, 107, 44, 0.06) 0%, transparent 60%),
+        linear-gradient(180deg, #FDFBF7, #F5EDE3);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gris);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+}
+
+/* =========================================
+   🍂 SPLASH SCREEN
+========================================= */
+
+.splash {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(145deg, #F5EDE3, #FDFBF7);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: desaparecer 3.2s forwards;
+}
+
+/* Decoración otoñal en splash */
+.splash::before {
+    content: "🍂 🍁 🍂";
+    position: absolute;
+    top: 20px;
+    font-size: 30px;
+    letter-spacing: 20px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.splash::after {
+    content: "🍁 🍂 🍁";
+    position: absolute;
+    bottom: 30px;
+    font-size: 25px;
+    letter-spacing: 15px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.splash img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 15px 45px rgba(92, 61, 46, 0.20);
+    animation: respirar 2s infinite;
+    border: 4px solid rgba(196, 154, 42, 0.2);
+}
+
+.splash h2 {
+    margin-top: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--dorado-otonhal);
+    letter-spacing: 2px;
+}
+
+.splash p {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--canela);
+}
+
+@keyframes respirar {
+    0% { transform: scale(0.95); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(0.95); }
+}
+
+@keyframes desaparecer {
+    0% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* =========================================
+   🍁 TARJETA PRINCIPAL
+========================================= */
+
+.card {
+    background: rgba(253, 251, 247, 0.92);
+    backdrop-filter: blur(12px);
+    max-width: 460px;
+    width: 100%;
+    padding: 35px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    animation: entrada 1s ease;
+    border: 1px solid rgba(196, 154, 42, 0.08);
+    position: relative;
+}
+
+/* Decoración otoñal en la card */
+.card::before {
+    content: "🍂";
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    font-size: 35px;
+    opacity: 0.08;
+    transform: rotate(20deg);
+    pointer-events: none;
+}
+
+.card::after {
+    content: "🍁";
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    font-size: 30px;
+    opacity: 0.08;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   🍂 FOTOGRAFÍA PRINCIPAL
+========================================= */
+
+.main-photo {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(92, 61, 46, 0.18);
+    transition: all 0.5s ease;
+    border: 3px solid rgba(196, 154, 42, 0.1);
+}
+
+.main-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(92, 61, 46, 0.25);
+    border-color: rgba(196, 154, 42, 0.3);
+}
+
+/* =========================================
+   🍁 LOGO
+========================================= */
+
+.logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -60px;
+    border: 8px solid var(--blanco-roto);
+    background: var(--blanco-roto);
+    box-shadow: 0 10px 35px rgba(92, 61, 46, 0.15);
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(-5deg);
+    box-shadow: 0 15px 45px rgba(196, 154, 42, 0.2);
+}
+
+/* =========================================
+   🍂 TITULOS
+========================================= */
+
+h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: var(--dorado-otonhal);
+    margin: 20px 0 5px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+h1 span {
+    color: var(--cafe-tostado);
+}
+
+.date {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--canela);
+    font-weight: 500;
+}
+
+.date i {
+    color: var(--dorado-otonhal);
+    margin: 0 5px;
+}
+
+/* =========================================
+   🍁 SEPARADOR
+========================================= */
+
+.divider {
+    height: 2px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--dorado-otonhal), transparent);
+    border: 0;
+    margin: 30px auto;
+    border-radius: 2px;
+}
+
+/* =========================================
+   🍂 TEXTO
+========================================= */
+
+p {
+    line-height: 1.9;
+    font-size: 14.5px;
+    color: var(--canela);
+}
+
+/* =========================================
+   🍁 BOTÓN
+========================================= */
+
+.btn {
+    display: block;
+    margin: 30px auto;
+    padding: 18px;
+    background: linear-gradient(145deg, var(--dorado-otonhal), var(--naranja-quemado));
+    color: white;
+    text-decoration: none;
+    border-radius: 18px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(204, 107, 44, 0.30);
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(204, 107, 44, 0.40);
+    background: linear-gradient(145deg, #D4A83A, #D4783C);
+}
+
+.btn i {
+    margin-right: 10px;
+}
+
+/* =========================================
+   🍂 INSTRUCCIONES
+========================================= */
+
+.instructions {
+    margin-top: 35px;
+    padding: 25px 30px;
+    background: linear-gradient(145deg, #F5EDE3, #FDFBF7);
+    border-radius: 20px;
+    text-align: left;
+    border: 1px solid rgba(166, 123, 91, 0.10);
+}
+
+.instructions h3 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 30px;
+    color: var(--dorado-otonhal);
+    margin-top: 0;
+}
+
+.instructions p {
+    margin: 10px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions p::before {
+    content: "🍂";
+    font-size: 16px;
+}
+
+/* =========================================
+   🍁 FOOTER
+========================================= */
+
+.footer {
+    margin-top: 35px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px;
+    color: var(--dorado-otonhal);
+    letter-spacing: 1px;
+}
+
+.footer small {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: var(--canela);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* =========================================
+   🍂 GALERÍA DE NOVIOS
+========================================= */
+
+.gallery {
+    margin-top: 40px;
+}
+
+.gallery h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 35px;
+    color: var(--dorado-otonhal);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.photos img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(92, 61, 46, 0.10);
+    border: 2px solid transparent;
+}
+
+.photos img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 30px rgba(92, 61, 46, 0.18);
+    border-color: rgba(196, 154, 42, 0.3);
+}
+
+/* =========================================
+   🍁 GALERÍA COMPLETA (sección extra)
+========================================= */
+
+.gallery-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.gallery-header h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px;
+    color: var(--cafe-tostado);
+}
+
+.gallery-header h2 span {
+    color: var(--dorado-otonhal);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.gallery-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(92, 61, 46, 0.10);
+    border: 2px solid transparent;
+}
+
+.gallery-photo:hover {
+    transform: scale(1.04);
+    box-shadow: 0 15px 35px rgba(92, 61, 46, 0.18);
+    border-color: rgba(196, 154, 42, 0.3);
+}
+
+/* =========================================
+   🍂 LOADING
+========================================= */
+
+.loading {
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 20px;
+    color: var(--canela);
+}
+
+.loading::after {
+    content: " 🍂";
+    display: inline-block;
+    animation: hoja 1.5s ease-in-out infinite;
+}
+
+@keyframes hoja {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(15deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* =========================================
+   🍁 LIGHTBOX
+========================================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 30, 22, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(8px);
+}
+
+.lightbox img {
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(196, 154, 42, 0.15);
+}
+
+#close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: var(--blanco-roto);
+    font-size: 42px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    opacity: 0.7;
+}
+
+#close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* =========================================
+   🍂 RESPONSIVE MÓVIL
+========================================= */
+
+@media (max-width: 500px) {
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .main-photo {
+        height: 250px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        border-width: 6px;
+    }
+
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 20px 10px;
+    }
+
+    .splash h2 {
+        font-size: 36px;
+    }
+
+    .splash img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .splash::before,
+    .splash::after {
+        font-size: 18px;
+    }
+
+    .card::before,
+    .card::after {
+        display: none;
+    }
+
+    #close {
+        font-size: 32px;
+        top: 15px;
+        right: 20px;
+    }
+
+    .instructions {
+        padding: 20px;
+    }
+
+    .instructions p {
+        font-size: 13px;
+    }
+}
+
+/* =========================================
+   🍁 SCROLLBAR PERSONALIZADA
+========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5EDE3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #C49A2A, #CC6B2C);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #CC6B2C, #D4783C);
+}
 
 :root{
 
