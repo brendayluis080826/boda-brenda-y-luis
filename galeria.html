@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome 6 (para iconos) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <link rel="stylesheet" href="gallery.css">
@@ -90,7 +90,7 @@
     </main>
     
     <!-- ============================================
-    🍁 LIGHTBOX (visor de fotos)
+    🍁 LIGHTBOX (visor de fotos) - CORREGIDO
     ============================================ -->
     <div id="lightbox" class="lightbox" role="dialog" aria-label="Visor de fotografías" aria-modal="true">
         <!-- Botón cerrar -->
@@ -98,17 +98,17 @@
             <i class="fas fa-times" aria-hidden="true"></i>
         </button>
         
-        <!-- Navegación -->
+        <!-- Navegación izquierda -->
         <button id="prevPhoto" class="lightbox-nav prev" aria-label="Foto anterior">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
         </button>
         
-        <!-- Imagen -->
-        <figure class="lightbox-figure">
+        <!-- Contenedor de la imagen -->
+        <div class="lightbox-image-wrapper">
             <img id="lightboxImage" src="" alt="Foto de recuerdo">
-            <figcaption id="lightboxCaption" class="lightbox-caption"></figcaption>
-        </figure>
+        </div>
         
+        <!-- Navegación derecha -->
         <button id="nextPhoto" class="lightbox-nav next" aria-label="Siguiente foto">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </button>
@@ -119,6 +119,9 @@
             <span class="separator">/</span>
             <span id="totalCount">0</span>
         </div>
+        
+        <!-- Caption/pie de foto -->
+        <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
     
     <!-- ============================================
