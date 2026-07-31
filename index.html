@@ -1,190 +1,224 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-Brenda & Luis | Recuerdos
-</title>
-
-
-<link rel="stylesheet" href="style.css">
-
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brenda & Luis · Nuestros recuerdos 🍂</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
-
-
-<div class="splash" id="splash">
-
-
-<img src="assets/images/logo.jpeg">
-
-
-<h2>
-Brenda & Luis
-</h2>
-
-
-<p>
-Nuestros recuerdos
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<img 
-src="assets/images/novios-1.jpeg"
-class="main-photo">
-
-
-
-<img 
-src="assets/images/logo.jpeg"
-class="logo">
-
-
-
-<h1>
-
-Brenda & Luis
-
-</h1>
-
-
-
-<p class="date">
-
-Gracias por acompañarnos
-
-</p>
-
-
-
-<div class="divider">
-
-</div>
-
-<section class="gallery">
-
-<h2>
-Nuestra historia
-</h2>
-
-
-<div class="photos">
-
-
-<img src="assets/images/novios-2.jpeg">
-
-<img src="assets/images/novios-3.jpeg">
-
-<img src="assets/images/novios-4.jpeg">
-
-</div>
-
-
-</section>
-
-
-
-<p>
-
-Queremos guardar cada sonrisa,
-cada abrazo y cada momento
-compartido con ustedes.
-
-</p>
-
-
-
-<a
-class="btn"
-href="https://script.google.com/macros/s/AKfycbw7CXpUeWtrjdlrQmTPVo9ix_f7HVKVyJHYjOIptO-qsoRF7D8lDeXeBoCNflhXRG9dkQ/exec"
-target="_blank">
-
-📸 Compartir fotografías
-
-</a>
-
-  <a href="galeria.html" class="button">
-    🖼️ Ver recuerdos
-</a>
-
-
-
-<div class="instructions">
-
-
-<h3>
-
-¿Cómo funciona?
-
-</h3>
-
-
-<p>
-1. Toma tus mejores fotos.
-</p>
-
-<p>
-2. Presiona el botón.
-</p>
-
-<p>
-3. Súbelas y forma parte de nuestros recuerdos.
-</p>
-
-
-</div>
-
-
-
-<div class="footer">
-
-
-♡
-
-<br>
-
-Gracias por celebrar con nosotros.
-
-<br><br>
-
-<strong>
-Brenda & Luis
-</strong>
-
-
-</div>
-
-
-
-</div>
-
-
-
-<script src="script.js"></script>
-
-
+    <!-- ============================================
+    🍁 SPLASH SCREEN (pantalla de carga)
+    ============================================ -->
+    <div class="splash" id="splash" role="status" aria-label="Cargando">
+        <!-- Decoración otoñal -->
+        <div class="splash-decoration">
+            <span>🍂</span>
+            <span>🍁</span>
+            <span>🍂</span>
+        </div>
+        
+        <!-- Logo -->
+        <div class="splash-logo">
+            <img 
+                src="assets/images/logo.jpeg" 
+                alt="Logo de Brenda y Luis"
+                loading="lazy"
+            >
+            <div class="splash-ring"></div>
+        </div>
+        
+        <h2>
+            Brenda <span class="ampersand">&amp;</span> Luis
+        </h2>
+        
+        <div class="splash-line" role="separator"></div>
+        
+        <p class="splash-subtitle">
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            Nuestros recuerdos
+            <i class="fas fa-camera" aria-hidden="true"></i>
+        </p>
+        
+        <div class="splash-loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <!-- ============================================
+    🍂 TARJETA PRINCIPAL
+    ============================================ -->
+    <main class="card" role="main">
+        
+        <!-- ===== FOTO PRINCIPAL ===== -->
+        <figure class="main-photo-wrapper">
+            <img 
+                src="assets/images/novios-1.jpeg" 
+                class="main-photo" 
+                alt="Brenda y Luis, los novios"
+                loading="lazy"
+            >
+            <div class="photo-overlay">
+                <span>🍂</span>
+            </div>
+        </figure>
+        
+        <!-- ===== LOGO ===== -->
+        <div class="logo-wrapper">
+            <img 
+                src="assets/images/logo.jpeg" 
+                class="logo" 
+                alt="Logo de Brenda y Luis"
+                loading="lazy"
+            >
+        </div>
+        
+        <!-- ===== TÍTULO ===== -->
+        <header class="card-header">
+            <h1>
+                Brenda <span class="ampersand">&amp;</span> Luis
+            </h1>
+            
+            <p class="date">
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                08 · 08 · 2026
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            </p>
+        </header>
+        
+        <!-- ===== SEPARADOR ===== -->
+        <div class="divider" role="separator">
+            <span class="divider-leaf">🍁</span>
+        </div>
+        
+        <!-- ===== GALERÍA DE NOVIOS ===== -->
+        <section class="gallery" aria-label="Galería de los novios">
+            <h2>
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                Nuestra historia
+                <i class="fas fa-heart" aria-hidden="true"></i>
+            </h2>
+            
+            <div class="photos">
+                <figure>
+                    <img 
+                        src="assets/images/novios-2.jpeg" 
+                        alt="Brenda y Luis - momento especial"
+                        loading="lazy"
+                    >
+                    <figcaption>✨</figcaption>
+                </figure>
+                <figure>
+                    <img 
+                        src="assets/images/novios-3.jpeg" 
+                        alt="Brenda y Luis - felices"
+                        loading="lazy"
+                    >
+                    <figcaption>✨</figcaption>
+                </figure>
+                <figure>
+                    <img 
+                        src="assets/images/novios-4.jpeg" 
+                        alt="Brenda y Luis - juntos"
+                        loading="lazy"
+                    >
+                    <figcaption>✨</figcaption>
+                </figure>
+            </div>
+        </section>
+        
+        <!-- ===== DESCRIPCIÓN ===== -->
+        <p class="description">
+            <span class="leaf-icon">🍂</span>
+            Queremos guardar cada sonrisa, cada abrazo y cada momento
+            compartido con ustedes.
+            <span class="leaf-icon">🍁</span>
+        </p>
+        
+        <!-- ===== BOTONES ===== -->
+        <div class="button-group">
+            <a 
+                class="btn btn-primary"
+                href="https://script.google.com/macros/s/AKfycbw7CXpUeWtrjdlrQmTPVo9ix_f7HVKVyJHYjOIptO-qsoRF7D8lDeXeBoCNflhXRG9dkQ/exec"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                Compartir fotografías
+            </a>
+            
+            <a 
+                href="galeria.html" 
+                class="btn btn-secondary"
+            >
+                <i class="fas fa-images" aria-hidden="true"></i>
+                Ver recuerdos
+            </a>
+        </div>
+        
+        <!-- ===== INSTRUCCIONES ===== -->
+        <section class="instructions" aria-label="Instrucciones">
+            <h3>
+                <i class="fas fa-camera" aria-hidden="true"></i>
+                ¿Cómo funciona?
+            </h3>
+            
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">01</span>
+                    <p>Toma tus mejores fotos</p>
+                    <span class="step-icon">📸</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">02</span>
+                    <p>Presiona el botón</p>
+                    <span class="step-icon">🖱️</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">03</span>
+                    <p>Súbelas y forma parte de nuestros recuerdos</p>
+                    <span class="step-icon">❤️</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-hearts">
+                <span>🍂</span>
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <span>🍁</span>
+            </div>
+            
+            <p class="footer-text">
+                Gracias por celebrar con nosotros.
+            </p>
+            
+            <strong class="footer-names">
+                Brenda <span class="ampersand">&amp;</span> Luis
+            </strong>
+            
+            <small class="footer-year">
+                <i class="fas fa-leaf" aria-hidden="true"></i>
+                Otoño 2026
+                <i class="fas fa-leaf" aria-hidden="true"></i>
+            </small>
+        </footer>
+        
+    </main>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
-
 </html>
