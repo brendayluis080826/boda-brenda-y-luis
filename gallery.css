@@ -1,481 +1,399 @@
 /* =====================================
-   GALERÍA BRENDA & LUIS
+   🍂 GALERÍA BRENDA & LUIS - OTOÑO 2026
 ===================================== */
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-
-body{
-
-    margin:0;
-
-    background:#FAF7F2;
-
-    color:#444;
-
-    font-family:'Montserrat',sans-serif;
-
+body {
+    margin: 0;
+    background: #F5EDE3; /* Crema cálido otoñal */
+    color: #5C3D2E; /* Café oscuro */
+    font-family: 'Montserrat', sans-serif;
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, rgba(196, 154, 42, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(204, 107, 44, 0.05) 0%, transparent 60%);
+    min-height: 100vh;
 }
-
 
 /* =====================================
-   ENCABEZADO
+   🍁 ENCABEZADO
 ===================================== */
 
-
-.galleryHeader{
-
-    text-align:center;
-
-    padding:70px 20px 45px;
-
-    max-width:900px;
-
-    margin:auto;
-
+.galleryHeader {
+    text-align: center;
+    padding: 70px 20px 45px;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
 }
 
-
-.galleryHeader h1{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:72px;
-
-    font-weight:700;
-
-    margin:0;
-
-    color:#6b5940;
-
+/* Decoración otoñal sutil */
+.galleryHeader::before,
+.galleryHeader::after {
+    content: "🍂";
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.10;
+    pointer-events: none;
 }
 
-
-.galleryHeader h1 span{
-
-    color:#C7A86D;
-
+.galleryHeader::before {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-15deg);
 }
 
-
-
-.galleryHeader h2{
-
-    margin:15px 0;
-
-    font-size:28px;
-
-    font-weight:400;
-
-    letter-spacing:2px;
-
+.galleryHeader::after {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(20deg) scaleX(-1);
 }
 
-
-
-.galleryHeader p{
-
-    max-width:650px;
-
-    margin:25px auto;
-
-    line-height:1.8;
-
-    color:#777;
-
+.galleryHeader h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 72px;
+    font-weight: 700;
+    margin: 0;
+    color: #8B5A2B; /* Café tostado */
+    letter-spacing: 1px;
 }
 
+.galleryHeader h1 span {
+    color: #C49A2A; /* Dorado otoñal */
+}
 
+.galleryHeader h2 {
+    margin: 15px 0;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #5C3D2E; /* Café oscuro */
+}
+
+.galleryHeader p {
+    max-width: 650px;
+    margin: 25px auto;
+    line-height: 1.8;
+    color: #A67B5B; /* Canela */
+    font-size: 15px;
+}
 
 /* =====================================
-   CONTADOR
+   🍂 CONTADOR
 ===================================== */
 
-
-.photoCounter{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin:25px auto;
-
-    padding:15px 30px;
-
-    background:white;
-
-    border-radius:50px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-
-    color:#777;
-
+.photoCounter {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px auto;
+    padding: 15px 35px;
+    background: #FDFBF7; /* Blanco roto */
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(92, 61, 46, 0.10);
+    color: #A67B5B;
+    border: 1px solid rgba(166, 123, 91, 0.10);
 }
 
-
-.photoCounter strong{
-
-    font-size:24px;
-
-    color:#C7A86D;
-
+.photoCounter strong {
+    font-size: 24px;
+    color: #C49A2A; /* Dorado otoñal */
 }
-
-
 
 /* =====================================
-   BOTÓN
+   🍁 BOTÓN
 ===================================== */
 
-
-.button{
-
-    display:inline-block;
-
-    margin-top:15px;
-
-    padding:13px 30px;
-
-    border-radius:50px;
-
-    background:#C7A86D;
-
-    color:white;
-
-    text-decoration:none;
-
-    transition:.3s;
-
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 35px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #C49A2A, #CC6B2C);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(204, 107, 44, 0.25);
+    letter-spacing: 0.5px;
 }
 
-
-.button:hover{
-
-    transform:translateY(-3px);
-
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(204, 107, 44, 0.35);
 }
 
-
+.button i {
+    margin-right: 8px;
+}
 
 /* =====================================
-   GALERÍA
+   🍂 GALERÍA
 ===================================== */
 
-
-.gallerySection{
-
-    width:100%;
-
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:30px 25px 80px;
-
+.gallerySection {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 25px 80px;
 }
 
-
-
-.galleryGrid{
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fill,minmax(240px,1fr));
-
-    gap:22px;
-
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 22px;
 }
-
-
 
 /* =====================================
-   FOTOS
+   🍁 FOTOS
 ===================================== */
 
-
-.gallery-photo{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    border-radius:18px;
-
-    cursor:pointer;
-
-    background:#eee;
-
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,.10);
-
-
-    opacity:0;
-
-    animation:
-
-    fadeIn .6s forwards;
-
-
-    transition:.3s;
-
+.gallery-photo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: pointer;
+    background: #e8ddd0;
+    box-shadow: 0 10px 30px rgba(92, 61, 46, 0.12);
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-
-
-.gallery-photo:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-
-    0 18px 35px rgba(0,0,0,.18);
-
+.gallery-photo:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(92, 61, 46, 0.18);
+    border-color: rgba(196, 154, 42, 0.3);
 }
 
+/* Efecto otoñal: borde dorado al hacer hover */
+.gallery-photo::after {
+    content: "🍂";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
+.gallery-photo:hover::after {
+    opacity: 0.6;
+}
 
-@keyframes fadeIn{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
     }
-
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
-
 }
-
-
 
 /* =====================================
-   CARGANDO
+   🍂 CARGANDO
 ===================================== */
 
-
-.loading{
-
-    text-align:center;
-
-    padding:80px 20px;
-
-    color:#888;
-
-    font-size:20px;
-
+.loading {
+    text-align: center;
+    padding: 80px 20px;
+    color: #A67B5B;
+    font-size: 20px;
 }
 
+.loading::after {
+    content: " 🍂";
+    display: inline-block;
+    animation: hojaCayendo 2s ease-in-out infinite;
+}
 
+@keyframes hojaCayendo {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(10px) rotate(20deg); opacity: 0.7; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
 
 /* =====================================
-   LIGHTBOX
+   🍁 LIGHTBOX
 ===================================== */
 
-
-.lightbox{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.92);
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:9999;
-   
-       touch-action:none;
-
-
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 30, 22, 0.95); /* Café oscuro con opacidad */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    touch-action: none;
+    backdrop-filter: blur(8px);
 }
 
-
-
-.lightbox img{
-
-    max-width:90%;
-
-    max-height:85%;
-
-    border-radius:15px;
-
-    transition:.25s ease;
-
-    user-select:none;
-
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 15px;
+    transition: 0.25s ease;
+    user-select: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(196, 154, 42, 0.2);
 }
 
+/* =====================================
+   🍂 BOTONES DEL LIGHTBOX
+===================================== */
 
-
-/* botones */
-
-
-#closeLightbox{
-
-    position:absolute;
-
-    top:20px;
-
-    right:30px;
-
-    background:none;
-
-    border:0;
-
-    color:white;
-
-    font-size:45px;
-
-    cursor:pointer;
-
+#closeLightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: 0;
+    color: #FDFBF7;
+    font-size: 45px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    opacity: 0.7;
 }
 
-
+#closeLightbox:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
 
 #prevPhoto,
-#nextPhoto{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
-
-    border:0;
-
-    background:rgba(255,255,255,.20);
-
-    color:white;
-
-    font-size:30px;
-
-    cursor:pointer;
-
+#nextPhoto {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: rgba(196, 154, 42, 0.20);
+    color: #FDFBF7;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
 }
 
-
-
-#prevPhoto{
-
-    left:25px;
-
+#prevPhoto:hover,
+#nextPhoto:hover {
+    background: rgba(196, 154, 42, 0.40);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
 }
 
-
-
-#nextPhoto{
-
-    right:25px;
-
+#prevPhoto {
+    left: 25px;
 }
 
-
+#nextPhoto {
+    right: 25px;
+}
 
 /* =====================================
-   CELULAR
+   🍁 RESPONSIVE MÓVIL
 ===================================== */
 
-
-@media(max-width:700px){
-
-
-    .galleryHeader{
-
-        padding-top:45px;
-
+@media (max-width: 700px) {
+    .galleryHeader {
+        padding-top: 45px;
     }
 
-
-    .galleryHeader h1{
-
-        font-size:48px;
-
+    .galleryHeader h1 {
+        font-size: 48px;
     }
 
-
-    .galleryHeader h2{
-
-        font-size:22px;
-
+    .galleryHeader h2 {
+        font-size: 22px;
+        letter-spacing: 2px;
     }
 
-
-    .galleryGrid{
-
-        grid-template-columns:
-
-        repeat(2,1fr);
-
-        gap:12px;
-
+    .galleryHeader::before,
+    .galleryHeader::after {
+        font-size: 28px;
     }
 
-
-    .gallerySection{
-
-        padding:20px 12px 50px;
-
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
+    .gallerySection {
+        padding: 20px 12px 50px;
+    }
 
     #prevPhoto,
-    #nextPhoto{
-
-        width:45px;
-
-        height:45px;
-
-        font-size:22px;
-
+    #nextPhoto {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
     }
 
+    #prevPhoto {
+        left: 12px;
+    }
 
+    #nextPhoto {
+        right: 12px;
+    }
+
+    #closeLightbox {
+        font-size: 35px;
+        top: 15px;
+        right: 20px;
+    }
+
+    .photoCounter {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .photoCounter strong {
+        font-size: 20px;
+    }
 }
-@keyframes photoAppear{
 
-    from{
+/* =====================================
+   🍂 ANIMACIÓN EXTRA PARA FOTOS
+===================================== */
 
-        opacity:0;
-
-        transform:translateY(30px) scale(.95);
-
+@keyframes photoAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
     }
-
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0) scale(1);
-
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
+}
 
+/* =====================================
+   🍁 SCROLLBAR PERSONALIZADA (opcional)
+===================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5EDE3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #C49A2A, #CC6B2C);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #CC6B2C, #D4783C);
 }
