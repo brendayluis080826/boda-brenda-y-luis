@@ -1,89 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Recuerdos | Brenda & Luis</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="gallery.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuerdos · Brenda & Luis 🍂</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (para iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="gallery.css">
 </head>
-
 <body>
-
-<header class="galleryHeader">
-
-    <h1>
-        Brenda <span>&</span> Luis
-    </h1>
-
-    <h2>
-        Recuerdos de nuestra boda
-    </h2>
-
-    <p>
-        Gracias por compartir con nosotros
-        este momento tan especial.
-    </p>
-
-    <div class="photoCounter">
-
-        ❤️
-
-        <strong id="photoCount">
-            0
-        </strong>
-
-        recuerdos compartidos
-
+    <!-- ============================================
+    🍁 ENCABEZADO
+    ============================================ -->
+    <header class="galleryHeader">
+        <div class="header-decoration">
+            <span class="leaf-left">🍂</span>
+            <span class="leaf-right">🍁</span>
+        </div>
+        
+        <h1>
+            Brenda <span class="ampersand">&amp;</span> Luis
+        </h1>
+        
+        <div class="header-line" role="separator"></div>
+        
+        <h2>
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            Recuerdos de nuestra boda
+        </h2>
+        
+        <p class="header-description">
+            <i class="fas fa-heart" aria-hidden="true" style="color: #C49A2A; font-size: 14px;"></i>
+            Gracias por compartir con nosotros este momento tan especial
+            <i class="fas fa-heart" aria-hidden="true" style="color: #C49A2A; font-size: 14px;"></i>
+        </p>
+        
+        <!-- Contador de fotos -->
+        <div class="photoCounter" role="status" aria-live="polite">
+            <i class="fas fa-images" aria-hidden="true"></i>
+            <strong id="photoCount">0</strong>
+            <span>recuerdos compartidos</span>
+        </div>
+        
+        <!-- Botones de navegación -->
+        <div class="header-buttons">
+            <a href="index.html" class="button back-btn">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                Volver a la invitación
+            </a>
+            <a href="index.html#upload" class="button upload-btn-small">
+                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                Subir fotos
+            </a>
+        </div>
+    </header>
+    
+    <!-- ============================================
+    🍂 GALERÍA PRINCIPAL
+    ============================================ -->
+    <main>
+        <section class="gallerySection" aria-label="Galería de recuerdos">
+            <div id="gallery" class="galleryGrid">
+                <!-- Estado de carga inicial -->
+                <div class="loading" id="loadingState">
+                    <i class="fas fa-spinner fa-pulse" aria-hidden="true"></i>
+                    <span>Cargando recuerdos</span>
+                    <span class="loading-leaves">🍂🍁🍂</span>
+                </div>
+            </div>
+            
+            <!-- Mensaje cuando no hay fotos -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <i class="fas fa-camera-retro" aria-hidden="true"></i>
+                <h3>Todavía no hay recuerdos</h3>
+                <p>Sé el primero en compartir tus fotos de este día tan especial</p>
+                <a href="index.html#upload" class="button empty-btn">
+                    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                    Subir recuerdos
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ============================================
+    🍁 LIGHTBOX (visor de fotos)
+    ============================================ -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Visor de fotografías" aria-modal="true">
+        <!-- Botón cerrar -->
+        <button id="closeLightbox" class="lightbox-close" aria-label="Cerrar visor">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Navegación -->
+        <button id="prevPhoto" class="lightbox-nav prev" aria-label="Foto anterior">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Imagen -->
+        <figure class="lightbox-figure">
+            <img id="lightboxImage" src="" alt="Foto de recuerdo">
+            <figcaption id="lightboxCaption" class="lightbox-caption"></figcaption>
+        </figure>
+        
+        <button id="nextPhoto" class="lightbox-nav next" aria-label="Siguiente foto">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Contador en lightbox -->
+        <div id="lightboxCounter" class="lightbox-counter">
+            <span id="currentIndex">1</span>
+            <span class="separator">/</span>
+            <span id="totalCount">0</span>
+        </div>
     </div>
-
-    <a href="index.html" class="button">
-        ← Volver a la invitación
-    </a>
-
-</header>
-
-<main>
-
-<section class="gallerySection">
-
-<div id="gallery" class="galleryGrid">
-
-<div class="loading">
-
-Cargando recuerdos...
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-<div id="lightbox" class="lightbox">
-
-<button id="prevPhoto">&#10094;</button>
-
-<img id="lightboxImage">
-
-<button id="nextPhoto">&#10095;</button>
-
-<button id="closeLightbox">&times;</button>
-
-</div>
-
-<script src="gallery.js"></script>
-
+    
+    <!-- ============================================
+    🍂 FOOTER
+    ============================================ -->
+    <footer class="galleryFooter">
+        <div class="footer-content">
+            <span class="footer-leaf">🍂</span>
+            <p>
+                <i class="fas fa-heart" aria-hidden="true" style="color: #C49A2A;"></i>
+                Brenda &amp; Luis · 08.08.2026
+                <i class="fas fa-heart" aria-hidden="true" style="color: #C49A2A;"></i>
+            </p>
+            <span class="footer-leaf">🍁</span>
+        </div>
+        <small>
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            Recuerdos compartidos con amor
+        </small>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="gallery.js"></script>
 </body>
-
 </html>
